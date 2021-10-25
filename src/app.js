@@ -1,14 +1,17 @@
 
-main();
+import { e } from 'dom.js'
+import { onLoginSubmit } from 'login.js'
+import { onRegisterSubmi, createNewUserStorage } from 'register.js'
 
-async function main() {
+window.addEventListener('load', async () => {
+
     const infoView = document.getElementById('info');
     const app = document.getElementById('app');
 
     const token = sessionStorage.getItem('sessionToken')
     if (token) {
         //change the view
-        infoView.style.display = 'none';    
+        infoView.style.display = 'none';
         app.style.display = 'block';
         //change navigation bar 
         document.getElementById('guest').style.display = 'none';
@@ -38,19 +41,19 @@ async function main() {
 
                 const el = userData.inProgressTasks.splice(userData.inProgressTasks.indexOf(event.target.textContent), 1)[0];
                 userData.completedTasks.unshift(el);
-                
+
                 sendData({ 'inProgressTasks': userData.inProgressTasks }, userData.objectId)
                 sendData({ 'completedTasks': userData.completedTasks }, userData.objectId)
                 renderData(userData);
-                
-                
+
+
             } else if (event.target.parentElement.id == 'completedTasks') {
                 // delte current task and calls render all task;
-                
+
                 userData.completedTasks.splice(userData.completedTasks.indexOf(event.target.textContent), 1);
                 sendData({ 'completedTasks': userData.completedTasks }, userData.objectId);
                 renderData(userData);
-                
+
             }
         });
 
@@ -66,7 +69,7 @@ async function main() {
             document.getElementById('submit').addEventListener('click', guestTasksHandler);
         });
     }
-}
+});
 
 function getInputData() { // get input value, clear input field
     const taskField = document.getElementById('task');
@@ -177,10 +180,6 @@ async function sendData(data, id) {
     const result = await response.json();
     console.log(result);
 }
-
-// async function getDataForObjectId(id) {
-
-// }
 
 
 

@@ -1,6 +1,6 @@
 document.querySelector('form').addEventListener('submit', onRegisterSubmit);
 
-async function onRegisterSubmit(event) {
+export async function onRegisterSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -38,8 +38,6 @@ async function onRegisterSubmit(event) {
     sessionStorage.setItem('authToken', result.sessionToken);
     sessionStorage.setItem('objectId', result.objectId);
 
-
-
     window.location.pathname = 'index.html';
 }
 
@@ -64,6 +62,4 @@ async function createNewUserStorage() {
         const err = await response.json();
         return alert(err.error)
     }
-
-
 }

@@ -14,3 +14,7 @@
 .task {
     font-weight: bold;
 }
+
+#views {
+    display: none;
+}

@@ -1,6 +1,5 @@
-document.querySelector('form').addEventListener('submit', onRegisterSubmit);
 
-export async function onRegisterSubmit(event) {
+async function onRegisterSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -34,14 +33,12 @@ export async function onRegisterSubmit(event) {
     }
 
     const result = await response.json();
-
+    
     sessionStorage.setItem('authToken', result.sessionToken);
     sessionStorage.setItem('objectId', result.objectId);
-
-    window.location.pathname = 'index.html';
 }
 
-async function createNewUserStorage() {
+export async function createNewUserStorage() {
     const response = await fetch('https://parseapi.back4app.com/classes/myApp', {
         method: 'post',
         headers: {
@@ -62,4 +59,20 @@ async function createNewUserStorage() {
         const err = await response.json();
         return alert(err.error)
     }
+}
+
+let main;
+let section;
+
+export function createRegister(mainTarget, sectionTarget) {
+    main = mainTarget;
+    section = sectionTarget;
+}
+
+export function showRegister() {
+    main.innerHTML = '';
+    main.appendChild(section);
+
+    document.querySelector('form').addEventListener('submit', onRegisterSubmit);
+    
 }

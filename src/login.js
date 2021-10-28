@@ -1,8 +1,5 @@
-document.querySelector('form').addEventListener('submit', onLoginSubmit);
-
-export async function onLoginSubmit(event) {
+async function onLoginSubmit(event) {
     event.preventDefault();
-
     const formData = new FormData(event.target);
 
     const username = formData.get('username');
@@ -31,6 +28,20 @@ export async function onLoginSubmit(event) {
     
     sessionStorage.setItem('sessionToken', result.sessionToken);
     sessionStorage.setItem('objectId', result.objectId);
-    
-    window.location.pathname = 'index.html';
+}
+
+let main;
+let section;
+let onSuccess;
+
+export function createLogin(mainTarget, sectionTarget, onSuccessTarget) {
+    main = mainTarget;
+    section = sectionTarget;
+    onSuccess = onSuccessTarget;
+    section.querySelector('form').addEventListener('submit', onLoginSubmit);
+}
+
+export function showLogin() {
+    main.innerHTML = '';
+    main.appendChild(section);
 }

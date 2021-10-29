@@ -74,5 +74,4 @@ export function showRegister() {
     main.appendChild(section);
 
     document.querySelector('form').addEventListener('submit', onRegisterSubmit);
-    
 }

@@ -73,6 +73,7 @@ let section;
 export function createApp(mainTarget, sectionTarget) {
     main = mainTarget;
     section = sectionTarget;
+    console.log(section);
 }
 
 export function showApp() {

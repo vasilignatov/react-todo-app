@@ -1,3 +1,6 @@
+import { render } from '../node_modules/lit-html/lit-html.js';
+import page from '../node_modules/page/page.mjs';
+
 import { createLogin, showLogin } from './login.js';
 import { createRegister, showRegister } from './register.js';
 import { createApp, showApp, renderData } from './userApp.js';
@@ -14,8 +17,8 @@ const links = {
     'registerLink': showRegister,
 };
 
-createLogin(main, views.loginView, () => {setUserNav, showApp});
-createRegister(main, views.registerView, () => {setUserNav, showApp});
+createLogin(main, views.loginView, () => { setUserNav, showApp });
+createRegister(main, views.registerView, () => { setUserNav, showApp });
 createInfo(main, views.infoView, views.appView);
 createApp(main, views.appView);
 

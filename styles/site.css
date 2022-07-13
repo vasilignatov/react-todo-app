@@ -18,10 +18,37 @@ header {
     position: relative;
 }
 
+header a {
+    text-decoration: none;
+
+}
+
+header a:hover {
+    cursor: pointer;
+}
+
 h1 {
     font-size: 150%;
     display: inline;
 }
+
+h1 span {
+    font-size: inherit;
+}
+
+#fw {
+    color: rgb(14, 194, 226);
+}
+
+#sw {
+    color: #6c8b47;
+}
+
+#tw {
+    color: darkblue;
+}
+
+
 
 main {
     background-color: #666666;
@@ -70,7 +97,7 @@ nav a:hover {
 
 img {
     width: 50px;
-    height:auto;
+    height: auto;
 }
 
 footer {

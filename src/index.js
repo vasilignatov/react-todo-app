@@ -1,8 +1,14 @@
 const path = require('path');
 const express = require('express');
+const initHandlebars = require('./config/handlebars');
 
 const app = express();
 
+app.use(express.urlencoded({extended: true}));
+// parse data from formdata
+
+initHandlebars(app);
+// init template engine
 
 
 

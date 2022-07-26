@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Manager App</title>
+
+    <link rel="stylesheet" href="./styles/site.css">
+    <script type="module" src="./src/app.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav">
+            <a href="/" class="nav__logo">
+                <img src="./images/logo.png" alt="logo">
+                <h1 class="app-header">ToDoApp</h1>
+            </a>
+
+            <ul class="nav__middle">
+                <li><a href="#about" class="about">About</a></li>
+                <li><a href="#features" class="features">Features</a></li>
+                <li><a href="#live-demo" class="live-demo">Live demo</a></li>
+                <li><a href="#pricing" class="pricing">Pricing</a></li>
+                <li><a href="#what-is-new" class="what-is-new">What`s new</a></li>
+            </ul>
+
+            <ul class="nav__right">
+                <li><a class="guest" id="loginLink" href="./login.html">Log In</a></li>
+                <li><a class="guest" id="registerLink" href="./register.html">Register</a></li>
+                <li><a class="user" id="logoutBtn" href="javascript:void(0)">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        {{{body}}}
+
+    </main>
+
+    <footer>
+        <div id="footer">
+            <div id="links">
+                <p>Product</p>
+                <a id="features">Features</a>
+                <a id="live-demo">Live demo</a>
+                <a id="what-is-new">What`s new?</a>
+                <a id="pricing">Pricing</a>
+            </div>
+            <div id="followUs">
+                Follow us:
+                <a href="https://www.instagram.com"><img
+                        src="./assets/4517840_follow-follow-us-on-instagram-png-download.jpg"></a>
+                <a href="https://www.facebook.com"><img
+                        src="./assets/like-us-on-facebook-png-like-and-follow-us-on-facebook-logo-115629100360inpiaaznh.png"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+.app {
+    width: 1400px;
+    height: 800px;
+    margin: auto auto;
+    margin-top: 80px;
+}
+
+.tasks__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding-top: 15px;
+}
+
+.wrapper {
+    /* background-color: white; */
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.tasks__inprogress {
+    /* background-color: white; */
+
+}
+
+.tasks__closed {
+    /* background-color: white; */
+
+}
+
+/* TASK STYLES */
+.task__header {
+    display: inline;
+    padding: 5px 10px;
+    background-color: grey;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.task {
+    margin: 20px;
+    background-color: #f5f5f5;
+    padding-top: 10px;
+    min-height: 80px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.task:hover {
+    opacity: 0.8;
+}
+
+
+.task__smb {
+    height: 18px;
+    float: right;
+    padding-right: 10px;
+}
+
+.task__name {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+}
+
+.task__description {
+    margin-top: 10px;
+    text-indent: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: visible;
+    font-family: 'Archivo', sans-serif;
+    padding-bottom: 5px;
+}
+
+.date__container,
+.task__priority {
+    display: inline;
+    padding-left: 15px;
+
+}
+
+.date__container {
+    border-radius: 5px;
+    background-color: #b1a1a183;
+    padding-left: 5px;
+    margin-left: 5px;
+    padding: 2px;
+}
+
+.date__img {
+    width: 15px;
+    vertical-align: top;
+}
+
+.task__priority {
+    border-radius: 5px;
+    background-color: rgba(205, 98, 98, 0.392);
+    padding: 2px;
+    margin-left: 20px;
+    color: white;
+}
+
+.task__priority.low {
+    background-color: rgb(52, 104, 164);
+}
+
+.task__priority.medium {
+    background-color: rgba(224, 218, 54, 0.88);
+}
+
+.task__priority.high {
+    background-color: rgba(248, 24, 24, 0.559);
+}
+
+
+/* TASKS HEADERS SUMMARY */
+.tasks__section__header {
+    padding: 15px;
+
+}
+
+.tasks__section__header h2 {
+    display: inline-block;
+    font-family: 'Open-Sans', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.tsh__tasks-counter {
+    font-family: 'Open-Sans', sans-serif;
+    padding-left: 20px;
+    text-decoration: underline;
+}
+
+.tasks__section__header__smb {
+    height: 18px;
+    float: right;
+}

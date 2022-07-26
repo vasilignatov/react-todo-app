@@ -1,0 +1,24 @@
+main section {
+    margin: 0 auto;
+    position: relative;
+    vertical-align: middle;
+}
+
+section h1{
+    padding-top: 200px;
+    font-size: 32px;
+}
+
+form {
+    text-align: center;
+}
+
+form input {
+    display: block;
+    margin: 0 auto;
+}
+
+section {
+    width: 100vh;
+    height: 80vh;
+}

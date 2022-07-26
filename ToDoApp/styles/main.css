@@ -1,0 +1,30 @@
+body {
+    margin-top: 80px;
+}
+
+main {
+    margin: auto auto;
+    text-align: justify;
+    margin-top: 65px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(49deg, rgba(0, 0, 0, 1) 0%, rgba(150, 150, 150, 1) 50%, rgba(255, 255, 255, 1) 100%);
+}
+
+section h1 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#about {
+    width: 100%;
+}
+
+.about__background {
+    width: 100%;
+    background-image: url('../images/5f58a11bf4ed2861039644c4_task-management-software.jpeg');
+    background-repeat: none;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}

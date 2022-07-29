@@ -1,19 +1,17 @@
 <div class="task">
     <div class="task__header">
-        <div class="task__name">ReactJS Course</div>
+        <div class="task__name">{{task.name}}</div>
         <img src="./images/show-more-button-with-three-dots.png" alt="show more btn" class="task__smb">
     </div>
     <div class="task__description">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus omnis illum
-            nesciunt corporis doloremque tenetur, saepe fuga odio quaerat cupiditate iure id
-            dolor. Earum ad maxime, sapiente rem odit nam!</p>
+        <p>{{task.description}}</p>
     </div>
 
     <div class="task__footer">
         <div class="date__container">
             <img src="./images/timetable.png" class="date__img">
-            <span class="task__date">25.10.2022</span>
+            <span class="task__date">{{task.date}}</span>
         </div>
-        <div class="task__priority high">Medium</div>
+        <div class="task__priority high">{{task.priority}}</div>
     </div>
 </div>

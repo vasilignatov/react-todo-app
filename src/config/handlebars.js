@@ -1,7 +1,6 @@
 const path = require('path');
 const handlebars = require('express-handlebars');
 
-
 const initHandlebars = (app) => {
 
     app.set('views', path.resolve(__dirname, '../views'));

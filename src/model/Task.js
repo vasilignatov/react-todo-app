@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const taskSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -14,8 +13,17 @@ const taskSchema = new mongoose.Schema({
         minLength: 5,
         maxLength: 150
     },
-    priority: [String],
-    status: [String]
+    priority: {
+        type: String,
+        required: true
+    },
+    state: {
+        type: String,
+        required: true
+    },
+    date: {
+        type: String
+    }
 });
 
 const Task = mongoose.model('Task', taskSchema);

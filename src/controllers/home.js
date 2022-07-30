@@ -7,7 +7,12 @@ const renderHome = async (req, res) => {
 
 const renderApp = async (req, res) => {
     let tasks = await taskService.getAll();
-    res.render('app', tasks);
+    
+    res.render('app', { 
+        opened: tasks.opened, 
+        closed: tasks.closed, 
+        'in-progress': tasks['in-progress'] 
+    });
 }
 
 router.get('/', renderHome);

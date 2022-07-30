@@ -15,47 +15,12 @@
 
             <div class="tasks__opened__container">
 
-                <!-- TASKS -->
-                <div class="task">
-                    <div class="task__header">
-                        <div class="task__name">ReactJS Course</div>
-                        <img src="./images/show-more-button-with-three-dots.png" alt="show more btn" class="task__smb">
-                    </div>
-                    <div class="task__description">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus omnis illum
-                            nesciunt corporis doloremque tenetur, saepe fuga odio quaerat cupiditate iure id
-                            dolor. Earum ad maxime, sapiente rem odit nam!</p>
-                    </div>
+                {{#each opened}}
+                {{> task this}}
+                {{else}}
+                <h2>You don`t have opened tasks. :)</h2>
+                {{/each}}
 
-                    <div class="task__footer">
-                        <div class="date__container">
-                            <img src="./images/timetable.png" class="date__img">
-                            <span class="task__date">25.10.2022</span>
-                        </div>
-                        <div class="task__priority high">Medium</div>
-                    </div>
-                </div>
-
-
-                <div class="task">
-                    <div class="task__header">
-                        <div class="task__name">ReactJS Course</div>
-                        <img src="./images/show-more-button-with-three-dots.png" alt="show more btn" class="task__smb">
-                    </div>
-                    <div class="task__description">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus omnis illum
-                            nesciunt corporis doloremque tenetur, saepe fuga odio quaerat cupiditate iure id
-                            dolor. Earum ad maxime, sapiente rem odit nam!</p>
-                    </div>
-
-                    <div class="task__footer">
-                        <div class="date__container">
-                            <img src="./images/timetable.png" class="date__img">
-                            <span class="task__date">25.10.2022</span>
-                        </div>
-                        <div class="task__priority high">Medium</div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -68,29 +33,12 @@
                 <img src="./images/show-more-button-with-three-dots.png" class="tasks__section__header__smb">
             </div>
 
-            <div class="tasks__opened__container">
+            <div class="tasks__in-progress__container">
 
                 <!-- TASKS -->
-
-                <div class="task">
-                    <div class="task__header">
-                        <div class="task__name">ReactJS Course</div>
-                        <img src="./images/show-more-button-with-three-dots.png" alt="show more btn" class="task__smb">
-                    </div>
-                    <div class="task__description">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus omnis illum
-                            nesciunt corporis doloremque tenetur, saepe fuga odio quaerat cupiditate iure id
-                            dolor. Earum ad maxime, sapiente rem odit nam!</p>
-                    </div>
-
-                    <div class="task__footer">
-                        <div class="date__container">
-                            <img src="./images/timetable.png" class="date__img">
-                            <span class="task__date">25.10.2022</span>
-                        </div>
-                        <div class="task__priority high">Medium</div>
-                    </div>
-                </div>
+                {{#each in-progress}}
+                {{> task}}
+                {{/each}}
 
             </div>
 
@@ -104,49 +52,12 @@
                 <img src="./images/show-more-button-with-three-dots.png" class="tasks__section__header__smb">
             </div>
 
-            <div class="tasks__opened__container">
+            <div class="tasks__closed__container">
 
                 <!-- TASKS -->
-                <div class="task">
-                    <div class="task__header">
-                        <div class="task__name">ReactJS Course</div>
-                        <img src="./images/show-more-button-with-three-dots.png" alt="show more btn" class="task__smb">
-                    </div>
-                    <div class="task__description">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus omnis illum
-                            nesciunt corporis doloremque tenetur, saepe fuga odio quaerat cupiditate iure id
-                            dolor. Earum ad maxime, sapiente rem odit nam!</p>
-                    </div>
-
-                    <div class="task__footer">
-                        <div class="date__container">
-                            <img src="./images/timetable.png" class="date__img">
-                            <span class="task__date">25.10.2022</span>
-                        </div>
-                        <div class="task__priority high">Medium</div>
-                    </div>
-                </div>
-
-
-                <div class="task">
-                    <div class="task__header">
-                        <div class="task__name">ReactJS Course</div>
-                        <img src="./images/show-more-button-with-three-dots.png" alt="show more btn" class="task__smb">
-                    </div>
-                    <div class="task__description">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus omnis illum
-                            nesciunt corporis doloremque tenetur, saepe fuga odio quaerat cupiditate iure id
-                            dolor. Earum ad maxime, sapiente rem odit nam!</p>
-                    </div>
-
-                    <div class="task__footer">
-                        <div class="date__container">
-                            <img src="./images/timetable.png" class="date__img">
-                            <span class="task__date">25.10.2022</span>
-                        </div>
-                        <div class="task__priority high">Medium</div>
-                    </div>
-                </div>
+                {{#each closed}}
+                {{> task}}
+                {{/each}}
 
             </div>
 

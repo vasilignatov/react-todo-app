@@ -9,7 +9,7 @@ const initHandlebars = (app) => {
 
     app.engine('hbs', handlebars.engine({
         extname: '.hbs',
-        // layoutsDir: 'main'
+        partialsDir: path.resolve(__dirname, '../views/partials/')
     }));
 }
 

@@ -48,7 +48,9 @@
 }
 
 .task:hover {
-    opacity: 0.8;
+    opacity: 0.9;
+    border-radius: 6px;
+    border: solid black 1px;
 }
 
 
@@ -137,3 +139,4 @@
     height: 18px;
     float: right;
 }
+

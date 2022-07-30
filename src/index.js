@@ -25,4 +25,6 @@ initDatabase(connetionString)
     })
     .catch(err => {
         console.log(err);
-    })
+    });
+
+    

@@ -1,9 +1,5 @@
 <div class="app">
     <div class="tasks__container">
-        <!-- <div class="tasks__header">
-                        <h1>TASKS</h1>
-                
-                    </div> -->
 
         <div class="tasks__opened wrapper">
 
@@ -16,9 +12,9 @@
             <div class="tasks__opened__container">
 
                 {{#each opened}}
-                    {{> task}}
+                {{> task}}
                 {{else}}
-                    <h2>You don`t have opened tasks. :)</h2>
+                <h2>You don`t have opened tasks. :)</h2>
                 {{/each}}
 
 
@@ -62,6 +58,10 @@
             </div>
 
         </div>
+
+        <a href="/create" id="createBtn">
+            Create New Task
+        </a>
 
     </div>
 </div>

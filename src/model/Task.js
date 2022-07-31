@@ -17,13 +17,8 @@ const taskSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    state: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: String
-    }
+    state: String,
+    date: String
 });
 
 const Task = mongoose.model('Task', taskSchema);

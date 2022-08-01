@@ -2,10 +2,10 @@ const path = require('path');
 const express = require('express');
 const initHandlebars = require('./config/handlebars');
 const initDatabase = require('./config/database');
+const routes = require('./routes');
 
 const connetionString = 'mongodb://localhost:27017/ToDoApp';
 
-const routes = require('./routes');
 
 const app = express();
 

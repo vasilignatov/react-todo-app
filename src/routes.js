@@ -1,21 +1,10 @@
-const res = require("express/lib/response");
-
 const router = require("express").Router();
+const homeController = require('./controllers/homeController');
+const appController = require('./controllers/appController');
 
-const homeController = require('./controllers/home');
 
-
-const renderRegister = (req, res) => {
-    res.render('register');
-}
-
-const renderLogin = (req, res) => {
-    res.render('login');
-}
-
-router.use('/', homeController);
-router.use('/login', renderLogin);
-router.use('/register', renderRegister);
+router.use(homeController);
+router.use('/app', appController)
 
 
 module.exports = router;

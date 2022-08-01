@@ -1,9 +1,6 @@
 const router = require('express').Router();
 const taskService = require('../services/taskService');
 
-const renderHome = async (req, res) => {
-    res.render('index');
-}
 
 const renderApp = async (req, res) => {
     let tasks = await taskService.getAll();
@@ -19,9 +16,8 @@ const renderCreate = (req, res) => {
     res.render('create');
 }   
 
-router.get('/', renderHome);
-router.get('/app', renderApp);
+router.get('/', renderApp);
 router.get('/create', renderCreate);
-// router.post('/app/create', createTask);
+
 
 module.exports = router;

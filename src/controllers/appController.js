@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const taskService = require('../services/taskService');
 
-
 const renderApp = async (req, res) => {
     let tasks = await taskService.getAll();
 

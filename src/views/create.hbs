@@ -1,16 +1,16 @@
 <section class="add__task">
 
-    <form>
+    <form method="POST" action="/app/create">
         <h1 class="add__task__header">Add New Task</h1>
         <ul class="form-style-1">
 
             <li><label>Name<span class="required">*</span></label>
-                <input type="text" name="field2" class="field-divided" />
+                <input type="text" name="name" class="field-divided" />
             </li>
 
             <li>
                 <label>Priority<span class="required">*</span></label>
-                <select name="field4" class="field-select">
+                <select name="priority" class="field-select">
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
@@ -19,11 +19,11 @@
 
             <li>
                 <label>Description<span class="required">*</span></label>
-                <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+                <textarea name="description" id="field5" class="field-long field-textarea"></textarea>
             </li>
 
             <li><label>Date<span class="required">*</span></label>
-                <input type="date" name="field6">
+                <input type="date" name="date">
             </li>
 
             <li>

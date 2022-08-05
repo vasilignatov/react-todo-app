@@ -33,19 +33,21 @@ const login = (req, res) => {
     });
 }
 
-const register = (req, res) => {
+const register = async (req, res) => {
     console.log(req.body);
     const { username, password, rePass } = req.body;
-    
+
 
 
     try {
-        let user = authService.register(username, password);
+        let user = await authService.register(username, password);
 
         jwt.sign({ id: user.id, username, password }, SECRET, { expiresIn: '1d' }, (err, token) => {
             if (err) {
                 return res.status(400).send(err);
             }
+
+            res.cookie('jwt', token);
 
             res.redirect('/');
         });

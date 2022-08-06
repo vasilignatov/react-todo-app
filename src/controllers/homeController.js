@@ -4,9 +4,7 @@ const authService = require('../services/authService')
 const jwt = require('jsonwebtoken');
 const uniqid = require('uniqid');
 
-const SECRET = '471fec40c34d63b90e8f66164bd465cd955630a1';
-
-
+const { SECRET } = reqire('../contains');
 
 const renderHome = async (req, res) => {
     res.render('index');
@@ -20,42 +18,51 @@ const renderLogin = (req, res) => {
     res.render('login');
 }
 
-const login = (req, res) => {
+const login = async (req, res) => {
     const { username, password } = req.body;
 
-    jwt.sign({ id: uniqid(), username, password }, SECRET, { expiresIn: '1d' }, (err, token) => {
-        if (err) {
-            return res.status(400)
-                .send(err);
-        }
+    const isValid = await authService.login(username, password);
+    try {
 
-        res.redirect('/');
-    });
+        if (isValid) {
+
+            const user = await authService.getUser(username);
+
+            jwt.sign({ id: user.id, username, password }, SECRET, { expiresIn: '1d' }, (err, token) => {
+                // create a jwt
+
+                if (err) {
+                    return res.status(400).send(err);
+                }
+
+                res.cookie('jwt', token);
+                // send token to user
+
+                res.redirect('/');
+            });
+        } else {
+            res.status(401).send('Canno`t login!')
+        }
+    } catch (error) {
+        res.status(401).send(error.message);
+    }
 }
 
 const register = async (req, res) => {
-    console.log(req.body);
-    const { username, password, rePass } = req.body;
+    let { username, password, rePass } = req.body;
 
-
+    if (password != rePass) {
+        return res.send('Passwords don`t match!');
+    }
 
     try {
-        let user = await authService.register(username, password);
+        await authService.register(username, password);
+        // return user with hashed password
 
-        jwt.sign({ id: user.id, username, password }, SECRET, { expiresIn: '1d' }, (err, token) => {
-            if (err) {
-                return res.status(400).send(err);
-            }
-
-            res.cookie('jwt', token);
-
-            res.redirect('/');
-        });
-
+        res.redirect('/');
     } catch (error) {
         res.status(400).send(error);
     }
-
 }
 
 router.get('/', renderHome);

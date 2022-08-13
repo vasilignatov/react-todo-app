@@ -1,5 +1,4 @@
 const User = require('../model/User');
-const bcrypt = require('bcrypt');
 
 
 // const { SECRET } = require('../constants');
@@ -10,8 +9,7 @@ exports.register = function (username, password, rePass) {
         throw { message: 'Passwords don`t match!' }
     }
 
-    return bcrypt.hash(password, 9)
-        .then(hash => User.create({ username, password: hash }));
+    return User.create({ username, password});
 
 }
 

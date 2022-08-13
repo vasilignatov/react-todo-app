@@ -1,23 +1,21 @@
-const uniqid = require('uniqid');
+const User = require('../model/User');
 const bcrypt = require('bcrypt');
-const users = [];
 
-const { SECRET } = require('../constants');
 
-function register(username, password) {
+// const { SECRET } = require('../constants');
 
-    if (users.some(x => x.username == username)) {
-        throw { message: 'User already registered!' };
+exports.register = function (username, password, rePass) {
+
+    if (password != rePass) {
+        throw { message: 'Passwords don`t match!' }
     }
 
-    bcrypt.hash(password, 9)
-        .then(hash => {
-            let user = { id: uniqid(), username, password: hash };
-            users.push(user);
-            return user;
-        });
+    return bcrypt.hash(password, 9)
+        .then(hash => User.create({ username, password: hash }));
+
 }
 
+// exports.register = function
 function login(username, password) {
 
     let user = users.find(x => x.username == username);
@@ -36,13 +34,4 @@ function getUser(username) {
     return user;
 }
 
-
-
-const authService = {
-    register,
-    login,
-    getUser
-};
-
-module.exports = authService;
 

@@ -1,35 +1,35 @@
 const User = require('../model/User');
-
-
-// const { SECRET } = require('../constants');
-
+const bcrypt = require('bcrypt');
+const { jwtSign } = require('../utils/jwtUtils');
+const { SECRET } = require('../constants');
 exports.register = function (username, password, rePass) {
 
     if (password != rePass) {
         throw { message: 'Passwords don`t match!' }
     }
 
-    return User.create({ username, password});
+    return User.create({ username, password });
 
 }
 
-// exports.register = function
-function login(username, password) {
+exports.login = async function (username, password) {
+    let user = await User.findByUsername(username);
+    let isValid = await bcrypt.compare(password, user.password);
 
-    let user = users.find(x => x.username == username);
+    if (isValid) {
+        return user;
+    } else {
+        throw { message: 'Cannot find username or password!' }
+    }
+}
 
-    if (!user) {
-        throw { message: 'Username or password is wrong!' };
+exports.createToken = function (user) {
+    let payload = {
+        _id: user._id,
+        username: user.username
     }
 
-    return bcrypt.compare(password, user.password);
-}
-
-function getUser(username) {
-
-    let user = users.find(x => x.username == username);
-
-    return user;
+    return jwtSign(payload, SECRET);
 }
 
 

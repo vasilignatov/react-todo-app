@@ -1,4 +1,5 @@
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const express = require('express');
 
 const initHandlebars = require('./config/handlebars');
@@ -13,6 +14,8 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 // parse data from formdata
+
+app.use(cookieParser());
 
 initHandlebars(app);
 // init template engine

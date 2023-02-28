@@ -1,31 +1,34 @@
+import { useState, useEffect } from 'react';
+import TodoItem from '../todoItem/TodoItem.js'
+
+const API_URL = 'http://localhost:3040/todos/';
+
 export default function Main() {
 
+    const [todos, setTodos] = useState([]);
+    
+    // useEffect(() => {
+    // }, [])
+    
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(todos => setTodos(todos))
+        .catch(err => console.error(err));
 
+    console.log(todos);
+    
     return (
-        <main class="app__main">
-            <div class="todo__input">
-                <label for="create-todo">Todo: </label>
+        <main className="app__main">
+            <div className="todo__input">
+                <label htmlFor="create-todo">Todo: </label>
                 <input type="text" id="create-todo" name="create-todo" />
                 <button>Add</button>
             </div>
 
-            <div class="todo__list">
-
+            <div className="todo__list">
                 <ul>
-
-                    <li class="todo">
-                        <input class="todo__isDone" type="checkbox" name="isDone" id="isDone" />
-                        <p class="todo__text">TASK TEXT</p>
-                        <button class="todo__btn">🗑</button>
-                    </li>
-
-                    {/*} <li class="todo">
-                    <input class="todo__isDone" type="checkbox" name="isDone" id="isDone">
-                    <p class="todo__text isDone">TASK TEXT</p>
-                    <button class="todo__btn">🗑</button>
-                    </li> */}
+                    {todos.map(todo => <TodoItem todo={todo} />)}
                 </ul>
-
             </div>
         </main>
     )

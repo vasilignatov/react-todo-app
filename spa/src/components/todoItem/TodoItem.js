@@ -1,11 +1,13 @@
 export default function TodoItem({
     todo,
+    onFinish,
+    onDelete
 }) {
     return (
-        <li class="todo">
-            <input class="todo__isDone" type="checkbox" name="isDone" id="isDone" />
-            <p class="todo__text">{todo.text}</p>
-            <button class="todo__btn">🗑</button>
+        <li className="todo">
+            <input onClick={onFinish} className="todo__isDone" type="checkbox" name="isDone" id="isDone" />
+            <p className={todo.isDone ? 'isDone' : ''} >{todo.text}</p>
+            <button className="todo__btn" onClick={onDelete}>🗑</button>
         </li>
     )
 }

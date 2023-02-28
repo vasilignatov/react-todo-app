@@ -51,12 +51,13 @@ li.todo p {
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .todo__input button:hover {
-  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.75);
 }
 
 .todo__input #create-todo {

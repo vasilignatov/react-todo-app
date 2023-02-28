@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+        
+        <header class="app__header">
+            <h1>Todo List using React</h1>
+        </header>
+        
+        
+        <main class="app__main">
+            <div class="todo__input">
+                <label for="create-todo">Todo: </label>
+                <input type="text" id="create-todo" name="create-todo">
+                <button>Add</button>
+            </div>
+
+            <div class="todo__list">
+
+                <ul>
+
+                    <li class="todo">
+                        <input class="todo__isDone" type="checkbox" name="isDone" id="isDone">
+                        <p class="todo__text">TASK TEXT</p>
+                        <button class="todo__btn">🗑</button>
+                    </li>
+
+                    <li class="todo">
+                        <input class="todo__isDone" type="checkbox" name="isDone" id="isDone">
+                        <p class="todo__text">TASK TEXT</p>
+                        <button class="todo__btn">🗑</button>
+                    </li>
+
+                    <li class="todo">
+                        <input class="todo__isDone" type="checkbox" name="isDone" id="isDone">
+                        <p class="todo__text isDone">TASK TEXT</p>
+                        <button class="todo__btn">🗑</button>
+                    </li>
+
+                </ul>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

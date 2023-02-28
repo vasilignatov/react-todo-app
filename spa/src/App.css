@@ -1,38 +1,118 @@
-.App {
+html {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to top, #1061dc, #2e72e2, #4583e8, #5b94ec, #71a4f0);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
   text-align: center;
+  margin-top: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul li.todo {
+  list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li.todo p {
+  display: inline;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app__header {
+  background-color: whitesmoke;
 }
 
-.App-link {
-  color: #61dafb;
+.app__header h1 {
+  padding: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__main {
+  margin: 0 auto;
+  width: 400px;
+  min-height: 400px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
+
+.app__main .todo__input {
+  padding-top: 15px;
+}
+
+.todo__input button {
+  background-color: #4583e8;
+  border: none;
+  padding: 4px 12px;
+  color: whitesmoke;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo__input button:hover {
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
+.todo__input #create-todo {
+  border: solid 2px #4583e8;
+}
+
+
+/* LIST */
+.todo__list ul {
+  padding: 0 20px;
+}
+
+.todo__list ul li {
+  background-color: lightskyblue;
+  position: relative;
+  min-height: 29.5px;
+  vertical-align: middle;
+  text-align: start;
+  margin-top: 10px;
+}
+
+.todo .todo__isDone {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+}
+
+.todo__list ul li p {
+  position: absolute;
+  font-size: 18px;
+  bottom: -14px;
+  left: 32px;
+  color: black;
+}
+
+.todo__list ul li button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: whitesmoke;
+  background-color: #71a4f0;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  padding: 3px 4px 2.5px 4px;
+  cursor: pointer;
+}
+
+.todo__list ul li button:hover{
+  color: rgb(6, 22, 163);
+}
+
+/* isCheched */
+
+.isDone {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  border:black
 }

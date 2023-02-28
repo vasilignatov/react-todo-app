@@ -1,0 +1,27 @@
+[
+    {
+        "id": "alsdkflk",
+        "text": "Learn React",
+        "isDone": false
+    },
+    {
+        "id": "123asdasd",
+        "text": "Clean my room",
+        "isDone": false
+    },
+    {
+        "id": "234sdffas",
+        "text": "Go to the gym",
+        "isDone": false
+    },
+    {
+        "id": "asdf23453",
+        "text": "Make dinner",
+        "isDone": false
+    },
+    {
+        "id": "fasd3456d",
+        "text": "Wash dishes",
+        "isDone": false
+    }
+]

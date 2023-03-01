@@ -20,6 +20,24 @@ export default function Main() {
         input.value = '';
     }
 
+    const onDelete = async (todoId) => {
+        await deleteTodo(todoId);
+        const newState = await getTodos();
+
+        setTodos(newState);
+    }
+
+    const onFinish = async (todo) => {
+        const editedTodo = JSON.parse(JSON.stringify(todo));
+        editedTodo.isDone = !editedTodo.isDone;
+
+        await updateTodo(editedTodo);
+
+        const updatedTodos = await getTodos();
+        console.log('->', updatedTodos);
+        setTodos(updatedTodos);
+    }
+
     return (
         <main className="app__main">
             <div className="todo__input">
@@ -30,12 +48,12 @@ export default function Main() {
 
             <div className="todo__list">
                 <ul>
-                    {todos.map(todo => <TodoItem todo={todo} />)}
                     {todos.map(todo =>
                         <TodoItem
                             key={todo.id}
                             todo={todo}
                             onDelete={onDelete}
+                            onFinish={onFinish}
                         />)}
                 </ul>
             </div>
